@@ -23,17 +23,32 @@
     </nav>
 
     <main class="contenedor">
-        <h1>Producto</h1>
+        <h1>React JS</h1>
 
-        <div class="grid">
-            <div class="producto">
-                <a href="producto.html">
-                    <img src="img/1.jpg" alt="Imagen camisa">
-                    <div>
-                        <a>Vue JS</a>
-                        <a></a>
-                    </div>    
-                </a>
+        <div class="camisa">
+            <img class="camisa__imagen" src="img/3.jpg" alt="Imagen del producto">
+            <div class="camisa__contenido">
+                <p>
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Saepe vero modi accusantium unde nihil amet maiores quia. A reprehenderit veniam nemo deleniti temporibus doloremque omnis rerum accusantium dolorum, voluptas maiores!
+                </p>
+                <form class="formulario">
+                    <select class="formulario__campo">
+                        <option disabled selected>
+                            --Seleccionar tabla --
+                        </option>
+                        <option>
+                            Chica
+                        </option>
+                        <option>
+                            Mediana
+                        </option>
+                        <option>
+                            Grande
+                        </option>
+                    </select>
+                    <input class="formulario__campo" type="number" placeholder="Cantidad" min="1">
+                    <input class="formulario__submit" type="submit" value="agregar al carrito"> 
+                </form>
             </div>
         </div>
     </main>
