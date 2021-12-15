@@ -3,6 +3,10 @@ const { src,dest,watch,parallel} = require('gulp');
 //CSS
 const sass = require('gulp-sass')(require('sass'));
 const plumber = require('gulp-plumber');
+const autoprefixer = require('autoprefixer');
+const cssnano = require('cssnano');
+const postcss = require('gulp-postcss');
+const sourcemaps = require('gulp-sourcemaps');
 
 //Imagenes 
 const cache = require('gulp-cache');
@@ -13,8 +17,11 @@ const avif = require('gulp-avif');
 function css(done){    
     //src('src/scss/app.scss')//Identificar el archivo .scss a compilar
     src('src/scss/**/*.scss') //esta sintaxis permite que se escuchen todos los archivos
+        .pipe(sourcemaps.init())
         .pipe(plumber()) //para que no detenga la ejecucion cuando hay un error;
         .pipe(sass())//Compilarlo
+        .pipe( postcss([autoprefixer(),cssnano()]))
+        .pipe(sourcemaps.write('.'))
         .pipe(dest('build/css'));  //Almacenarlo
     console.log('compilando sass')
     done();
